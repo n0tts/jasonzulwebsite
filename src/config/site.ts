@@ -5,7 +5,7 @@ export interface NavLink {
 }
 
 export const siteConfig = {
-    name: "Jason Zulfadli - Advocates & Solicitors",
+    name: "Jason Zulfadhli - Advocates & Solicitors",
     description: "Expert legal services in Kota Kinabalu, Sabah. Focus on small business law, corporate advisory, and dispute resolution.",
     url: "https://jasonzulfadli.com",
     ogImage: "/og-default.png",
