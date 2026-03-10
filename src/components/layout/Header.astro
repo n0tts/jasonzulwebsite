@@ -180,12 +180,14 @@ const isActive = (link: NavLink): boolean => {
 </header>
 
 <script>
-    const btn = document.getElementById("mobile-menu-button");
-    const menu = document.getElementById("mobile-menu");
-    const iconOpen = document.getElementById("menu-icon-open");
-    const iconClose = document.getElementById("menu-icon-close");
+    function initMobileNav() {
+        const btn = document.getElementById("mobile-menu-button");
+        const menu = document.getElementById("mobile-menu");
+        const iconOpen = document.getElementById("menu-icon-open");
+        const iconClose = document.getElementById("menu-icon-close");
 
-    if (btn && menu && iconOpen && iconClose) {
+        if (!btn || !menu || !iconOpen || !iconClose) return;
+
         btn.addEventListener("click", () => {
             const expanded = btn.getAttribute("aria-expanded") === "true";
             btn.setAttribute("aria-expanded", (!expanded).toString());
@@ -196,4 +198,24 @@ const isActive = (link: NavLink): boolean => {
             iconClose.classList.toggle("block");
         });
     }
+
+    // Re-run after every View Transition navigation (and on initial load)
+    document.addEventListener("astro:page-load", initMobileNav);
+
+    // Reset menu to closed before each page swap so state doesn't leak
+    document.addEventListener("astro:before-swap", () => {
+        const menu = document.getElementById("mobile-menu");
+        const btn = document.getElementById("mobile-menu-button");
+        const iconOpen = document.getElementById("menu-icon-open");
+        const iconClose = document.getElementById("menu-icon-close");
+
+        if (menu && !menu.classList.contains("hidden")) {
+            menu.classList.add("hidden");
+            btn?.setAttribute("aria-expanded", "false");
+            iconOpen?.classList.remove("hidden");
+            iconOpen?.classList.add("block");
+            iconClose?.classList.add("hidden");
+            iconClose?.classList.remove("block");
+        }
+    });
 </script>
