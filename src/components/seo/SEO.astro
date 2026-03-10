@@ -22,8 +22,11 @@ const {
   noindex = false,
 } = Astro.props;
 
-const siteName = "Jason Zulfadli - Advocates & Solicitors";
-const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+const siteName = "Jason Zulfadhli - Advocates & Solicitors";
+const fullTitle =
+  title === siteName || title.includes("Jason Zulfadhli")
+    ? title
+    : `${title} | ${siteName}`;
 
 const imageURL = new URL(image, canonicalURL).toString();
 
