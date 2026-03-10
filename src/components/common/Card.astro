@@ -1,0 +1,57 @@
+---
+interface Props {
+    title?: string;
+    description?: string;
+    class?: string;
+    hoverEffect?: boolean;
+}
+
+const {
+    title,
+    description,
+    class: className = "",
+    hoverEffect = false,
+} = Astro.props;
+
+const hoverStyles = hoverEffect
+    ? "transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+    : "";
+---
+
+<div
+    class={`bg-white rounded-md border border-gray-200 shadow-sm overflow-hidden flex flex-col ${hoverStyles} ${className}`}
+>
+    {
+        Astro.slots.has("header") && (
+            <div class="border-b border-gray-100 bg-gray-50/50 px-6 py-4">
+                <slot name="header" />
+            </div>
+        )
+    }
+
+    <div class="px-6 py-5 flex-grow">
+        {
+            title && (
+                <h3 class="font-display font-semibold text-xl text-primary mb-2 line-clamp-1">
+                    {title}
+                </h3>
+            )
+        }
+        {
+            description && (
+                <p class="text-gray-600 text-base mb-4 line-clamp-3">
+                    {description}
+                </p>
+            )
+        }
+        <slot />
+    </div>
+
+    {
+        Astro.slots.has("footer") && (
+            <div class="border-t border-gray-100 bg-gray-50 px-6 py-4 mt-auto">
+                <slot name="footer" />
+            </div>
+        )
+    }
+</div>

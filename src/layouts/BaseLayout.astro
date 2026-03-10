@@ -1,0 +1,59 @@
+---
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import SEO from "../components/seo/SEO.astro";
+import "../styles/global.css";
+import "@fontsource/playfair-display/400.css";
+import "@fontsource/playfair-display/600.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/fira-code/400.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article";
+  publishDate?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "Jason Zulfadli - Advocates & Solicitors (Kota Kinabalu, Sabah)",
+  description = "Expert legal services in Kota Kinabalu, Sabah. Focus on small business law, corporate advisory, and dispute resolution.",
+  image,
+  type = "website",
+  publishDate,
+  noindex,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      publishDate={publishDate}
+      noindex={noindex}
+    />
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen flex flex-col antialiased">
+    <Header />
+
+    <main id="main-content" class="grow">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

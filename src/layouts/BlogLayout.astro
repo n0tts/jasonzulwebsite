@@ -1,0 +1,78 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import { formatDate } from "../utils/helpers";
+import { Image } from "astro:assets";
+
+interface Props {
+    post: CollectionEntry<"blog">;
+    readingTime: string;
+}
+
+const { post, readingTime } = Astro.props;
+const {
+    title,
+    description,
+    publishDate,
+    updatedDate,
+    author,
+    heroImage,
+    tags,
+} = post.data;
+---
+
+<BaseLayout
+    title={title}
+    description={description}
+    image={heroImage?.src}
+    type="article"
+    publishDate={publishDate.toISOString()}
+>
+    <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <header class="mb-12 md:mb-16 text-center">
+            <div class="flex flex-wrap gap-2 justify-center mb-6">
+                {
+                    tags.map((tag: string) => (
+                        <span class="inline-block bg-primary/10 text-primary rounded-full px-3 py-1 text-sm font-semibold">
+                            {tag}
+                        </span>
+                    ))
+                }
+            </div>
+            <h1
+                class="text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight"
+            >
+                {title}
+            </h1>
+            <div
+                class="flex items-center justify-center gap-3 text-gray-600 text-base"
+            >
+                <span class="font-medium text-gray-800">{author}</span>
+                <span class="text-gray-400">&bull;</span>
+                <time datetime={publishDate.toISOString()}
+                    >{formatDate(publishDate)}</time
+                >
+                <span class="text-gray-400">&bull;</span>
+                <span>{readingTime}</span>
+            </div>
+        </header>
+
+        {
+            heroImage && (
+                <div class="mb-12 md:mb-16 rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <Image
+                        src={heroImage}
+                        alt={title}
+                        width={1200}
+                        height={630}
+                        class="w-full h-auto object-cover"
+                    />
+                </div>
+            )
+        }
+
+        <div class="prose prose-lg md:prose-xl prose-primary mx-auto">
+            <slot />
+        </div>
+    </article>
+</BaseLayout>

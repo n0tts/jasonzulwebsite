@@ -1,0 +1,74 @@
+---
+import Icon from "../common/Icon.astro";
+
+interface Pillar {
+    icon: string;
+    label: string;
+    heading: string;
+    body: string;
+}
+
+const pillars: Pillar[] = [
+    {
+        icon: "scale",
+        label: "Our Philosophy",
+        heading: "Equality Under the Law",
+        body: "We stand for the fundamental belief that everyone is equal under the law and deserves to be protected by it — regardless of background or circumstance.",
+    },
+    {
+        icon: "target",
+        label: "Our Mission",
+        heading: "Solutions to Your Legal Problems",
+        body: "We are committed to providing practical, effective legal solutions that truly address your needs — not just legal opinions, but actionable answers.",
+    },
+    {
+        icon: "handshake",
+        label: "Our Vision",
+        heading: "Relationship &amp; Trust",
+        body: "We aim to build long-lasting relationships founded on transparency, reliability, and trust — becoming your firm of choice for every legal matter.",
+    },
+];
+---
+
+<section class="bg-primary py-16 md:py-24" aria-label="Our philosophy, mission and vision">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section header */}
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span
+                class="text-saffron text-sm font-semibold uppercase tracking-widest font-body block mb-3"
+            >
+                Who We Are
+            </span>
+            <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-4">
+                Guided by Principle
+            </h2>
+            <p class="text-white/70 font-body text-base leading-relaxed">
+                Our work is shaped by a clear philosophy, a focused mission, and a long-term vision
+                for the people we serve.
+            </p>
+        </div>
+
+        {/* 3-column pillars */}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {
+                pillars.map((pillar) => (
+                    <div class="flex flex-col items-center text-center p-8 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+                        <div class="w-14 h-14 rounded-full bg-saffron/20 flex items-center justify-center text-saffron mb-6 shrink-0">
+                            <Icon name={pillar.icon} size="lg" ariaLabel={pillar.label} />
+                        </div>
+                        <span class="text-saffron text-xs font-semibold uppercase tracking-widest font-body mb-2">
+                            {pillar.label}
+                        </span>
+                        <h3
+                            class="font-display font-semibold text-xl text-white mb-4 leading-snug"
+                            set:html={pillar.heading}
+                        />
+                        <p class="text-white/70 font-body text-sm leading-relaxed">
+                            {pillar.body}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

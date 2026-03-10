@@ -1,0 +1,493 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionWrapper from "../components/common/SectionWrapper.astro";
+import Icon from "../components/common/Icon.astro";
+
+const lastUpdated = "10 March 2026";
+---
+
+<BaseLayout
+    title="Privacy Policy — Jason Zulfadli Advocates & Solicitors"
+    description="Privacy Policy for Jason Zulfadli Advocates & Solicitors. Learn how we collect, use, and protect your personal data in accordance with the Personal Data Protection Act 2010 (Malaysia)."
+    noindex={false}
+>
+    {/* Hero */}
+    <section
+        class="bg-primary py-20 md:py-28 relative overflow-hidden"
+        aria-label="Privacy Policy page hero"
+    >
+        <div
+            class="absolute top-0 right-0 w-80 h-80 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"
+            aria-hidden="true"
+        ></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex items-center gap-2 mb-4">
+                <a
+                    href="/"
+                    class="text-white/50 hover:text-white text-sm font-body transition-colors"
+                    >Home</a
+                >
+                <Icon name="chevron-right" size="sm" class="text-white/30" />
+                <span class="text-white/80 text-sm font-body">Privacy Policy</span>
+            </div>
+            <span
+                class="text-saffron text-sm font-semibold uppercase tracking-widest font-body block mb-4"
+            >
+                Legal
+            </span>
+            <h1
+                class="text-4xl md:text-5xl font-display font-bold text-white leading-tight max-w-3xl"
+            >
+                Privacy Policy
+            </h1>
+            <p class="mt-4 text-base font-body text-white/60">
+                Last updated: {lastUpdated}
+            </p>
+        </div>
+    </section>
+
+    {/* Content */}
+    <SectionWrapper id="privacy-policy-content">
+        <div class="max-w-3xl mx-auto">
+
+            {/* Intro */}
+            <div class="mb-10 p-6 bg-primary/5 rounded-lg border border-primary/10">
+                <p class="font-body text-gray-700 text-base leading-relaxed">
+                    <strong class="text-primary font-semibold"
+                        >Jason Zulfadli Advocates &amp; Solicitors</strong
+                    > ("the Firm", "we", "us", or "our") is committed to protecting
+                    the privacy and personal data of all individuals who interact with
+                    our website and services. This Privacy Policy explains how we collect,
+                    use, store, and protect your personal data in accordance with the
+                    <strong class="text-primary font-semibold"
+                        >Personal Data Protection Act 2010 (PDPA)</strong
+                    > of Malaysia.
+                </p>
+            </div>
+
+            <div class="font-body text-gray-700 text-base leading-relaxed">
+
+                {/* 1 */}
+                <section aria-labelledby="pp-1">
+                    <h2
+                        id="pp-1"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        1. Who We Are
+                    </h2>
+                    <p>
+                        The data controller responsible for your personal data is:
+                    </p>
+                    <div
+                        class="mt-4 bg-gray-50 rounded-lg border border-gray-200 p-5 space-y-1 text-sm"
+                    >
+                        <p class="font-semibold text-primary">
+                            Jason Zulfadli Advocates &amp; Solicitors
+                        </p>
+                        <p>
+                            Lot S6-3, 2nd Floor, Villa Tropicana Commercial,<br />
+                            Jalan Lintas, Penampang Bypass,<br />
+                            88300 Kota Kinabalu, Sabah, Malaysia
+                        </p>
+                        <p>
+                            Tel: <a
+                                href="tel:088742076"
+                                class="text-secondary hover:underline">088-742076</a>
+                        </p>
+                        <p>
+                            Email: <a
+                                href="mailto:jzlegalfirm@gmail.com"
+                                class="text-secondary hover:underline"
+                                >jzlegalfirm@gmail.com</a
+                            >
+                        </p>
+                    </div>
+                </section>
+
+                {/* 2 */}
+                <section aria-labelledby="pp-2">
+                    <h2
+                        id="pp-2"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        2. Personal Data We Collect
+                    </h2>
+                    <p>
+                        We may collect the following categories of personal data when
+                        you use our website or contact us:
+                    </p>
+                    <ul class="mt-4 space-y-2 list-none">
+                        {
+                            [
+                                {
+                                    label: "Identity data",
+                                    detail: "Your full name.",
+                                },
+                                {
+                                    label: "Contact data",
+                                    detail: "Email address, phone number, and postal address.",
+                                },
+                                {
+                                    label: "Enquiry data",
+                                    detail: "Details of your legal matter or question as provided in our contact form or by correspondence.",
+                                },
+                                {
+                                    label: "Technical data",
+                                    detail: "IP address, browser type, and usage data collected automatically when you visit our website.",
+                                },
+                            ].map((item) => (
+                                <li class="flex items-start gap-3">
+                                    <Icon
+                                        name="check"
+                                        size="sm"
+                                        class="text-secondary shrink-0 mt-1"
+                                    />
+                                    <span>
+                                        <strong class="text-gray-800">{item.label}:</strong>{" "}
+                                        {item.detail}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                    <p class="mt-4 text-sm text-gray-500 italic">
+                        We do not knowingly collect personal data from individuals
+                        under the age of 18 without verifiable parental consent.
+                    </p>
+                </section>
+
+                {/* 3 */}
+                <section aria-labelledby="pp-3">
+                    <h2
+                        id="pp-3"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        3. How We Use Your Personal Data
+                    </h2>
+                    <p>
+                        We use your personal data only for the purposes for which it
+                        was collected, including:
+                    </p>
+                    <ul class="mt-4 space-y-2 list-none">
+                        {
+                            [
+                                "To respond to your enquiries and provide legal services;",
+                                "To communicate with you regarding your matter or engagement with the Firm;",
+                                "To comply with our professional and regulatory obligations under the Legal Profession Act 1976 and the Sabah Bar;",
+                                "To maintain our records and manage our business operations;",
+                                "To improve our website and services.",
+                            ].map((item) => (
+                                <li class="flex items-start gap-3">
+                                    <Icon
+                                        name="check"
+                                        size="sm"
+                                        class="text-secondary shrink-0 mt-1"
+                                    />
+                                    <span>{item}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </section>
+
+                {/* 4 */}
+                <section aria-labelledby="pp-4">
+                    <h2
+                        id="pp-4"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        4. Legal Basis for Processing
+                    </h2>
+                    <p>
+                        We process your personal data on the following grounds under
+                        the PDPA 2010:
+                    </p>
+                    <ul class="mt-4 space-y-2 list-none">
+                        {
+                            [
+                                "Your consent, which you provide when you submit our contact form or correspond with us;",
+                                "Our contractual obligations, where processing is necessary to perform legal services you have engaged us for;",
+                                "Our legitimate interests in managing and operating the Firm, provided such interests are not overridden by your rights;",
+                                "Compliance with a legal obligation to which we are subject.",
+                            ].map((item) => (
+                                <li class="flex items-start gap-3">
+                                    <Icon
+                                        name="check"
+                                        size="sm"
+                                        class="text-secondary shrink-0 mt-1"
+                                    />
+                                    <span>{item}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </section>
+
+                {/* 5 */}
+                <section aria-labelledby="pp-5">
+                    <h2
+                        id="pp-5"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        5. Disclosure to Third Parties
+                    </h2>
+                    <p>
+                        We do not sell, trade, or rent your personal data to third
+                        parties. We may share your personal data only in the following
+                        limited circumstances:
+                    </p>
+                    <ul class="mt-4 space-y-2 list-none">
+                        {
+                            [
+                                "Service providers who assist us in operating our website (including Web3Forms, which processes contact form submissions on our behalf) — such providers are bound by confidentiality obligations and are not permitted to use your data for their own purposes;",
+                                "Courts, tribunals, or regulatory bodies where disclosure is required by law;",
+                                "Professional advisors, co-counsel, or other parties strictly necessary for the conduct of your legal matter, with your consent;",
+                                "Successors to the Firm's business, in the event of a merger or transfer of practice.",
+                            ].map((item) => (
+                                <li class="flex items-start gap-3">
+                                    <Icon
+                                        name="check"
+                                        size="sm"
+                                        class="text-secondary shrink-0 mt-1"
+                                    />
+                                    <span>{item}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </section>
+
+                {/* 6 */}
+                <section aria-labelledby="pp-6">
+                    <h2
+                        id="pp-6"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        6. Data Retention
+                    </h2>
+                    <p>
+                        We retain personal data only for as long as necessary to fulfil
+                        the purpose for which it was collected, or as required by law
+                        or professional rules. In general:
+                    </p>
+                    <ul class="mt-4 space-y-2 list-none">
+                        {
+                            [
+                                "Client files and correspondence are retained for a minimum of 7 years following the conclusion of a matter, in accordance with professional guidelines;",
+                                "Enquiry data from website visitors who did not become clients is retained for no longer than 12 months;",
+                                "Technical and analytical data is retained in anonymised form only.",
+                            ].map((item) => (
+                                <li class="flex items-start gap-3">
+                                    <Icon
+                                        name="check"
+                                        size="sm"
+                                        class="text-secondary shrink-0 mt-1"
+                                    />
+                                    <span>{item}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </section>
+
+                {/* 7 */}
+                <section aria-labelledby="pp-7">
+                    <h2
+                        id="pp-7"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        7. Cookies
+                    </h2>
+                    <p>
+                        Our website may use essential cookies to ensure it functions
+                        correctly. We do not use cookies for advertising or tracking
+                        purposes. You may disable cookies through your browser settings,
+                        but doing so may affect certain website functionality.
+                    </p>
+                </section>
+
+                {/* 8 */}
+                <section aria-labelledby="pp-8">
+                    <h2
+                        id="pp-8"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        8. Security of Your Personal Data
+                    </h2>
+                    <p>
+                        We take reasonable technical and organisational measures to
+                        protect your personal data from unauthorised access, use,
+                        disclosure, alteration, or destruction. However, no method of
+                        transmission over the internet is completely secure, and we
+                        cannot guarantee absolute security.
+                    </p>
+                    <p class="mt-3">
+                        If you have reason to believe that your interaction with us is
+                        no longer secure, please contact us immediately at
+                        <a
+                            href="mailto:jzlegalfirm@gmail.com"
+                            class="text-secondary hover:underline"
+                            >jzlegalfirm@gmail.com</a
+                        >.
+                    </p>
+                </section>
+
+                {/* 9 */}
+                <section aria-labelledby="pp-9">
+                    <h2
+                        id="pp-9"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        9. Your Rights Under the PDPA
+                    </h2>
+                    <p>
+                        Under the Personal Data Protection Act 2010, you have the
+                        following rights in relation to your personal data:
+                    </p>
+                    <ul class="mt-4 space-y-2 list-none">
+                        {
+                            [
+                                {
+                                    right: "Right of access",
+                                    detail: "You may request a copy of the personal data we hold about you.",
+                                },
+                                {
+                                    right: "Right to correction",
+                                    detail: "You may request that we correct any inaccurate or incomplete personal data.",
+                                },
+                                {
+                                    right: "Right to withdraw consent",
+                                    detail: "Where processing is based on your consent, you may withdraw it at any time, without affecting the lawfulness of processing prior to withdrawal.",
+                                },
+                                {
+                                    right: "Right to limit processing",
+                                    detail: "In certain circumstances, you may request that we restrict the processing of your personal data.",
+                                },
+                            ].map((item) => (
+                                <li class="flex items-start gap-3">
+                                    <Icon
+                                        name="check"
+                                        size="sm"
+                                        class="text-secondary shrink-0 mt-1"
+                                    />
+                                    <span>
+                                        <strong class="text-gray-800">{item.right}:</strong>{" "}
+                                        {item.detail}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                    <p class="mt-4">
+                        To exercise any of the above rights, please contact us in
+                        writing at the details in Section 1. We will respond within 21
+                        days in accordance with the PDPA.
+                    </p>
+                </section>
+
+                {/* 10 */}
+                <section aria-labelledby="pp-10">
+                    <h2
+                        id="pp-10"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        10. Links to External Websites
+                    </h2>
+                    <p>
+                        Our website may contain links to third-party websites. We are
+                        not responsible for the privacy practices or content of those
+                        websites. We encourage you to review the privacy policies of
+                        any external sites you visit.
+                    </p>
+                </section>
+
+                {/* 11 */}
+                <section aria-labelledby="pp-11">
+                    <h2
+                        id="pp-11"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        11. Changes to This Policy
+                    </h2>
+                    <p>
+                        We reserve the right to update this Privacy Policy from time
+                        to time to reflect changes in law, technology, or our
+                        practices. The date of the most recent revision is shown at
+                        the top of this page. Continued use of our website following
+                        any changes constitutes your acceptance of the updated policy.
+                    </p>
+                </section>
+
+                {/* 12 */}
+                <section aria-labelledby="pp-12">
+                    <h2
+                        id="pp-12"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        12. Contact Us
+                    </h2>
+                    <p>
+                        If you have any questions, concerns, or complaints regarding
+                        this Privacy Policy or our handling of your personal data,
+                        please contact us:
+                    </p>
+                    <div
+                        class="mt-4 bg-gray-50 rounded-lg border border-gray-200 p-5 space-y-1 text-sm"
+                    >
+                        <p class="font-semibold text-primary">
+                            Jason Zulfadli Advocates &amp; Solicitors
+                        </p>
+                        <p>
+                            Lot S6-3, 2nd Floor, Villa Tropicana Commercial,<br />
+                            Jalan Lintas, Penampang Bypass,<br />
+                            88300 Kota Kinabalu, Sabah, Malaysia
+                        </p>
+                        <p>
+                            Tel: <a
+                                href="tel:088742076"
+                                class="text-secondary hover:underline">088-742076</a>
+                        </p>
+                        <p>
+                            Email: <a
+                                href="mailto:jzlegalfirm@gmail.com"
+                                class="text-secondary hover:underline"
+                                >jzlegalfirm@gmail.com</a
+                            >
+                        </p>
+                    </div>
+                    <p class="mt-4">
+                        If you are not satisfied with our response, you may lodge a
+                        complaint with the <strong class="text-gray-800"
+                            >Department of Personal Data Protection Malaysia</strong
+                        > at <a
+                            href="https://www.pdp.gov.my"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-secondary hover:underline">www.pdp.gov.my</a
+                        >.
+                    </p>
+                </section>
+
+            </div>
+
+            {/* Back to home */}
+            <div class="mt-12 pt-8 border-t border-gray-200 flex flex-wrap gap-4">
+                <a
+                    href="/"
+                    class="inline-flex items-center gap-2 text-sm font-semibold font-body text-secondary hover:gap-3 transition-all duration-200"
+                >
+                    <Icon name="arrow-left" size="sm" />
+                    Back to Home
+                </a>
+                <a
+                    href="/disclaimer"
+                    class="inline-flex items-center gap-2 text-sm font-semibold font-body text-gray-500 hover:text-primary transition-colors"
+                >
+                    Read our Disclaimer
+                    <Icon name="arrow-right" size="sm" />
+                </a>
+            </div>
+
+        </div>
+    </SectionWrapper>
+</BaseLayout>

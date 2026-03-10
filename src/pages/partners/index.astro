@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionWrapper from "../../components/common/SectionWrapper.astro";
+import CTABanner from "../../components/sections/CTABanner.astro";
+import Icon from "../../components/common/Icon.astro";
+import Badge from "../../components/common/Badge.astro";
+import { partners } from "../../data/partners";
+---
+
+<BaseLayout
+    title="Our Partners — Jason Zulfadli Advocates & Solicitors"
+    description="Meet the founding and managing partners of Jason Zulfadli Advocates & Solicitors — Jason Chin Wei Jye and Mohd Zulfadhli Bin Darman Shah."
+>
+    {/* Page Hero */}
+    <section class="bg-primary py-20 md:py-28 relative overflow-hidden" aria-label="Partners page hero">
+        <div
+            class="absolute top-0 right-0 w-80 h-80 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"
+            aria-hidden="true"
+        ></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex items-center gap-2 mb-4">
+                <a href="/" class="text-white/50 hover:text-white text-sm font-body transition-colors">Home</a>
+                <Icon name="chevron-right" size="sm" class="text-white/30" />
+                <span class="text-white/80 text-sm font-body">Partners</span>
+            </div>
+            <span class="text-saffron text-sm font-semibold uppercase tracking-widest font-body block mb-4">
+                Our People
+            </span>
+            <h1 class="text-4xl md:text-5xl font-display font-bold text-white leading-tight max-w-2xl">
+                Meet Our Partners
+            </h1>
+            <p class="mt-6 text-lg font-body text-white/75 max-w-xl leading-relaxed">
+                The firm is led by two experienced advocates admitted to the Sabah Bar on the
+                same day — bringing complementary strengths in litigation, corporate law, and
+                conveyancing.
+            </p>
+        </div>
+    </section>
+
+    {/* Partner Cards */}
+    <SectionWrapper>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {
+                partners.map((partner) => (
+                    <a
+                        href={`/partners/${partner.slug}`}
+                        class="group bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-secondary"
+                        aria-label={`View profile of ${partner.name}`}
+                    >
+                        {/* Coloured top bar */}
+                        <div class="h-1.5 w-full bg-secondary" />
+
+                        <div class="p-8 flex flex-col gap-5 flex-grow">
+                            {/* Name & role */}
+                            <div>
+                                <Badge variant="secondary" class="mb-3">{partner.role}</Badge>
+                                <h2 class="text-2xl font-display font-semibold text-primary leading-snug group-hover:text-secondary transition-colors">
+                                    {partner.name}
+                                </h2>
+                            </div>
+
+                            {/* Admission */}
+                            <div class="flex items-start gap-2 text-sm text-gray-500 font-body">
+                                <Icon name="award" size="sm" class="text-secondary shrink-0 mt-0.5" ariaLabel="Bar admission" />
+                                <span>
+                                    {partner.admissionBar}, {partner.admissionDate} &middot; No. {partner.admissionNo}
+                                </span>
+                            </div>
+
+                            {/* Bio excerpt */}
+                            <p class="text-gray-600 font-body text-base leading-relaxed line-clamp-3">
+                                {partner.bio[0]}
+                            </p>
+
+                            {/* Specialisation */}
+                            <div class="pt-4 border-t border-gray-100">
+                                <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 font-body mb-2">
+                                    Area of Specialisation
+                                </p>
+                                <p class="text-sm font-semibold text-primary font-body">
+                                    {partner.specialisationHeading}
+                                </p>
+                            </div>
+
+                            {/* CTA */}
+                            <div class="mt-auto pt-2 flex items-center gap-2 text-secondary text-sm font-semibold font-body group-hover:gap-3 transition-all duration-200">
+                                View Full Profile
+                                <Icon name="arrow-right" size="sm" />
+                            </div>
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+    </SectionWrapper>
+
+    <CTABanner
+        heading="Have a Legal Matter We Can Help With?"
+        subCopy="Our partners are ready to assist. Reach out for a confidential consultation today."
+        primaryLabel="Contact Us"
+        primaryHref="/contact"
+        secondaryLabel="Call the Office"
+        secondaryHref="tel:088742076"
+        phone="088-742076"
+    />
+</BaseLayout>

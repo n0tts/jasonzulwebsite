@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/sections/Hero.astro";
+import PracticeAreasGrid from "../components/sections/PracticeAreasGrid.astro";
+import PhilosophySection from "../components/sections/PhilosophySection.astro";
+import CTABanner from "../components/sections/CTABanner.astro";
+import SectionWrapper from "../components/common/SectionWrapper.astro";
+import Icon from "../components/common/Icon.astro";
+
+import heroBanner from "../assets/images/hero-banner.jpg";
+
+const stats = [
+    { icon: "calendar", value: "2021", label: "Year Established" },
+    { icon: "briefcase", value: "7", label: "Practice Areas" },
+    { icon: "users", value: "2", label: "Admitted Partners" },
+    { icon: "map-pin", value: "KK", label: "Kota Kinabalu, Sabah" },
+];
+---
+
+<BaseLayout
+    title="Jason Zulfadli — Advocates & Solicitors | Kota Kinabalu, Sabah"
+    description="Jason Zulfadli Advocates & Solicitors — creative legal solutions for individuals, families, and businesses in Kota Kinabalu, Sabah. Established 2021."
+    image="/images/hero-banner.jpg"
+>
+    {/* 1. Hero */}
+    <Hero
+        headline="Creative Solutions for"
+        headlineAccent="Your Legal Problems."
+        subCopy="Jason Zulfadli Advocates & Solicitors is a Kota Kinabalu-based law firm committed to providing professional, quality legal services with fresh perspectives and genuine dedication to every client."
+        primaryLabel="Our Practice Areas"
+        primaryHref="/practice-areas"
+        secondaryLabel="Get in Touch"
+        secondaryHref="/contact"
+        bgImage={heroBanner}
+    />
+
+    {/* 2. About Snippet */}
+    <SectionWrapper id="about-snippet">
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+        >
+            {/* Left — text */}
+            <div>
+                <span
+                    class="text-secondary text-sm font-semibold uppercase tracking-widest font-body block mb-3"
+                >
+                    About the Firm
+                </span>
+                <h2
+                    class="text-3xl md:text-4xl font-display font-semibold text-primary mb-6 leading-snug"
+                >
+                    A Fresh Perspective on Legal Practice in Sabah
+                </h2>
+                <div
+                    class="space-y-4 font-body text-gray-700 text-base leading-relaxed"
+                >
+                    <p>
+                        Founded in 2021 by <strong
+                            class="text-primary font-semibold"
+                            >Mr. Jason Chin Wei Jye</strong
+                        >, the firm was established with a clear purpose — to
+                        make quality legal counsel accessible and
+                        results-driven. Originally operating as
+                        <em>JF &amp; Co.</em>, the firm was renamed upon the
+                        arrival of Managing Partner <strong
+                            class="text-primary font-semibold"
+                            >Mr. Mohd Zulfadhli Bin Darman Shah</strong
+                        >.
+                    </p>
+                    <p>
+                        Based in <strong class="text-primary font-semibold"
+                            >Penampang, Kota Kinabalu</strong
+                        >, we serve individuals, families, property developers,
+                        and businesses across Sabah. Our team brings fresh
+                        ideas, genuine passion, and a creative approach to
+                        solving legal problems — no matter the complexity.
+                    </p>
+                </div>
+                <div class="mt-8">
+                    <a
+                        href="/about"
+                        class="inline-flex items-center gap-2 text-secondary font-semibold font-body hover:gap-3 transition-all duration-200 group"
+                        aria-label="Learn more about our firm"
+                    >
+                        Learn More About Us
+                        <Icon
+                            name="arrow-right"
+                            size="sm"
+                            class="group-hover:translate-x-1 transition-transform duration-200"
+                        />
+                    </a>
+                </div>
+            </div>
+
+            {/* Right — stats */}
+            <div class="grid grid-cols-2 gap-4">
+                {
+                    stats.map((stat) => (
+                        <div class="bg-gray-50 rounded-lg border border-gray-200 p-6 flex flex-col items-center text-center gap-3">
+                            <div class="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center text-primary">
+                                <Icon
+                                    name={stat.icon}
+                                    size="md"
+                                    ariaLabel={stat.label}
+                                />
+                            </div>
+                            <div>
+                                <p class="text-2xl font-display font-bold text-primary">
+                                    {stat.value}
+                                </p>
+                                <p class="text-sm text-gray-500 font-body">
+                                    {stat.label}
+                                </p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </SectionWrapper>
+
+    {/* 3. Practice Areas */}
+    <PracticeAreasGrid />
+
+    {/* 4. Philosophy / Mission / Vision */}
+    <PhilosophySection />
+
+    {/* 5. CTA Banner */}
+    <CTABanner
+        heading="Ready to Solve Your Legal Problem?"
+        subCopy="Whether you need legal advice, representation, or a document drafted — we are here. Contact our Kota Kinabalu office today."
+        primaryLabel="Contact Us"
+        primaryHref="/contact"
+        secondaryLabel="Call the Office"
+        secondaryHref="tel:088742076"
+        phone="088-742076"
+    />
+</BaseLayout>

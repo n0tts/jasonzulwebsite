@@ -1,0 +1,35 @@
+---
+import { Icon as AstroIcon } from "astro-icon/components";
+
+interface Props {
+    /** The name of the icon in the lucide set (e.g., "home", "chevron-right") */
+    name: string;
+    size?: "sm" | "md" | "lg";
+    class?: string;
+    ariaLabel?: string;
+}
+
+const { name, size = "md", class: className = "", ariaLabel } = Astro.props;
+
+// Strict sizing tied to Tailwind scale (no arbitrary px)
+const sizeMap = {
+    sm: "w-4 h-4", // 16px
+    md: "w-5 h-5", // 20px
+    lg: "w-6 h-6", // 24px
+};
+
+const dimensionClass = sizeMap[size];
+
+// Enforce single library usage (Lucide chosen for elegant, modern, professional look)
+const iconName = `lucide:${name.replace(/^lucide:/, "")}`;
+---
+
+{
+    /* inline-flex and shrink-0 ensures icons next to text can be centered easily and don't squish */
+}
+<AstroIcon
+    name={iconName}
+    class={`inline-flex shrink-0 ${dimensionClass} ${className}`}
+    aria-label={ariaLabel}
+    aria-hidden={ariaLabel ? undefined : "true"}
+/>

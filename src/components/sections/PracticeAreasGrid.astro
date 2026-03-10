@@ -1,0 +1,108 @@
+---
+import SectionWrapper from "../common/SectionWrapper.astro";
+import Icon from "../common/Icon.astro";
+
+interface PracticeArea {
+    icon: string;
+    title: string;
+    description: string;
+}
+
+const practiceAreas: PracticeArea[] = [
+    {
+        icon: "scale",
+        title: "General Civil Litigation",
+        description:
+            "Representing clients in civil disputes across Sabah courts, from contract breaches to tortious claims.",
+    },
+    {
+        icon: "briefcase",
+        title: "Company Law",
+        description:
+            "Advisory and compliance services for companies — incorporation, governance, and shareholder matters.",
+    },
+    {
+        icon: "home",
+        title: "Conveyancing",
+        description:
+            "End-to-end property transaction services including SPA drafting, MOT preparation, and title transfers.",
+    },
+    {
+        icon: "hard-hat",
+        title: "Construction & Adjudication",
+        description:
+            "Dispute resolution for construction contracts under CIPAA, including adjudication and arbitration.",
+    },
+    {
+        icon: "file-text",
+        title: "Non-Contentious Matters",
+        description:
+            "Legal documentation, wills, estate administration, and other non-litigious legal advisory.",
+    },
+    {
+        icon: "shield",
+        title: "Criminal Litigation",
+        description:
+            "Vigorous criminal defence representation in the Magistrates' Court, Sessions Court, and High Court.",
+    },
+    {
+        icon: "map-pin",
+        title: "Land Dispute",
+        description:
+            "Resolution of land boundary conflicts, Native Customary Rights (NCR) claims, and land title issues.",
+    },
+];
+---
+
+<SectionWrapper class="bg-gray-50" id="practice-areas">
+    {/* Section header */}
+    <div class="text-center max-w-2xl mx-auto mb-14">
+        <span
+            class="text-secondary text-sm font-semibold uppercase tracking-widest font-body block mb-3"
+        >
+            What We Do
+        </span>
+        <h2 class="text-3xl md:text-4xl font-display font-semibold text-primary mb-4">
+            Our Practice Areas
+        </h2>
+        <p class="text-gray-600 font-body text-base leading-relaxed">
+            We offer a broad range of legal services tailored to individuals, families,
+            and businesses across Sabah.
+        </p>
+    </div>
+
+    {/* Grid */}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {
+            practiceAreas.map((area) => (
+                <div class="group bg-white rounded-lg border border-gray-200 shadow-sm p-6 flex flex-col gap-4 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+                    <div class="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 shrink-0">
+                        <Icon name={area.icon} size="lg" />
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold text-lg text-primary mb-2 leading-snug">
+                            {area.title}
+                        </h3>
+                        <p class="text-gray-600 font-body text-sm leading-relaxed">
+                            {area.description}
+                        </p>
+                    </div>
+                </div>
+            ))
+        }
+
+        {/* "View All" card */}
+        <a
+            href="/practice-areas"
+            class="group bg-primary rounded-lg border border-primary/80 shadow-sm p-6 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:bg-primary/90 hover:shadow-md hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            aria-label="See all practice areas"
+        >
+            <div class="w-12 h-12 rounded-md bg-white/10 flex items-center justify-center text-white group-hover:bg-white/20 transition-colors duration-300">
+                <Icon name="arrow-right" size="lg" />
+            </div>
+            <span class="font-display font-semibold text-lg text-white leading-snug">
+                Explore All Areas
+            </span>
+        </a>
+    </div>
+</SectionWrapper>

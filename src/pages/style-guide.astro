@@ -1,0 +1,675 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/common/Button.astro";
+import Badge from "../components/common/Badge.astro";
+import Card from "../components/common/Card.astro";
+import Icon from "../components/common/Icon.astro";
+
+// Used to conditionally render the developer warning banner
+const isDev = import.meta.env.DEV;
+---
+
+<BaseLayout
+    title="Design System & Style Guide"
+    description="Internal style guide for the Jason Zulfadli website."
+    noindex={true}
+>
+    {/* Dev Warning Banner */}
+    <div
+        class="w-full bg-yellow-100 border-b border-yellow-200 text-yellow-800 px-4 py-3 text-sm flex items-center justify-center gap-2 relative z-50 shadow-sm"
+    >
+        <Icon name="triangle-alert" size="sm" />
+        <span class="font-medium"
+            >Developer Notice: This environment is for reference only. <strong
+                >This page is not indexed by search engines.</strong
+            ></span
+        >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <header class="mb-22 border-b border-gray-200 pb-10">
+            <h1
+                class="text-4xl md:text-5xl font-display font-bold text-primary mb-4"
+            >
+                Design System
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl">
+                This is a living style guide for the Jason Zulfadli law firm
+                website. It documents our colors, typography, spacing, and
+                reusable UI components.
+            </p>
+        </header>
+
+        <div class="space-y-30">
+            {/* 1. COLOR PALETTE */}
+            <section>
+                <div class="mb-8">
+                    <h2
+                        class="text-3xl font-display font-semibold text-primary mb-2"
+                    >
+                        1. Color Palette
+                    </h2>
+                    <p class="text-gray-600">
+                        The core brand colors used throughout the application.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div
+                        class="flex flex-col rounded-lg overflow-hidden border border-gray-200 shadow-sm"
+                    >
+                        <div class="h-24 bg-primary w-full"></div>
+                        <div class="p-4 bg-white">
+                            <p class="font-semibold text-gray-900">Primary</p>
+                            <p class="text-sm font-mono text-gray-500">
+                                #0e2442
+                            </p>
+                            <p class="text-xs text-gray-400 mt-2">bg-primary</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col rounded-lg overflow-hidden border border-gray-200 shadow-sm"
+                    >
+                        <div class="h-24 bg-secondary w-full"></div>
+                        <div class="p-4 bg-white">
+                            <p class="font-semibold text-gray-900">Secondary</p>
+                            <p class="text-sm font-mono text-gray-500">
+                                #0077b6
+                            </p>
+                            <p class="text-xs text-gray-400 mt-2">
+                                bg-secondary
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col rounded-lg overflow-hidden border border-gray-200 shadow-sm"
+                    >
+                        <div
+                            class="h-24 bg-[#ffffff] w-full border-b border-gray-100"
+                        >
+                        </div>
+                        <div class="p-4 bg-white">
+                            <p class="font-semibold text-gray-900">
+                                Accent (White)
+                            </p>
+                            <p class="text-sm font-mono text-gray-500">
+                                #ffffff
+                            </p>
+                            <p class="text-xs text-gray-400 mt-2">bg-accent</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 2. TYPOGRAPHY */}
+            <section>
+                <div class="mb-8 border-t border-gray-200 pt-10">
+                    <h2
+                        class="text-3xl font-display font-semibold text-primary mb-2"
+                    >
+                        2. Typography
+                    </h2>
+                    <p class="text-gray-600">
+                        Display (Playfair Display), Body (Lora), and Mono (Fira
+                        Code) scale.
+                    </p>
+                </div>
+
+                <div
+                    class="space-y-8 bg-white p-8 rounded-lg border border-gray-200 shadow-sm"
+                >
+                    <div>
+                        <span class="text-sm text-gray-400 mb-1 block font-mono"
+                            >H1 / text-4xl / font-display</span
+                        >
+                        <h1 class="text-4xl font-display text-primary">
+                            The Quick Brown Fox Jumps Over The Lazy Dog
+                        </h1>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400 mb-1 block font-mono"
+                            >H2 / text-3xl / font-display</span
+                        >
+                        <h2 class="text-3xl font-display text-primary">
+                            The Quick Brown Fox Jumps Over The Lazy Dog
+                        </h2>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400 mb-1 block font-mono"
+                            >H3 / text-2xl / font-display</span
+                        >
+                        <h3 class="text-2xl font-display text-primary">
+                            The Quick Brown Fox Jumps Over The Lazy Dog
+                        </h3>
+                    </div>
+                    <hr class="border-gray-100" />
+                    <div>
+                        <span class="text-sm text-gray-400 mb-1 block font-mono"
+                            >Lead / text-md / font-body</span
+                        >
+                        <p class="text-md font-body text-gray-800">
+                            We provide expert legal services tailored for small
+                            businesses and families in Kota Kinabalu, Sabah. Our
+                            priority is ensuring you are protected.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400 mb-1 block font-mono"
+                            >Body / text-base / font-body</span
+                        >
+                        <p class="text-base font-body text-gray-700">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400 mb-1 block font-mono"
+                            >Small / text-sm / font-body</span
+                        >
+                        <p class="text-sm font-body text-gray-500">
+                            This is small supplemental text, often used for meta
+                            information, dates, and footer links.
+                        </p>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400 mb-1 block font-mono"
+                            >Code / font-mono</span
+                        >
+                        <code
+                            class="font-mono bg-gray-100 px-2 py-1 rounded text-sm text-primary"
+                            >npm install @fontsource/fira-code</code
+                        >
+                    </div>
+                </div>
+            </section>
+
+            {/* 3. BUTTONS */}
+            <section>
+                <div class="mb-8 border-t border-gray-200 pt-10">
+                    <h2
+                        class="text-3xl font-display font-semibold text-primary mb-2"
+                    >
+                        3. Buttons
+                    </h2>
+                    <p class="text-gray-600">
+                        Standard interactive elements using the Button.astro
+                        component.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-wrap gap-6 items-center p-8 bg-white rounded-lg border border-gray-200 shadow-sm"
+                >
+                    <div class="space-y-4">
+                        <h4
+                            class="text-sm font-semibold text-gray-500 uppercase tracking-wider"
+                        >
+                            Primary
+                        </h4>
+                        <div class="flex items-center gap-4">
+                            <Button variant="primary">Primary Action</Button>
+                            <Button
+                                variant="primary"
+                                class="opacity-50 cursor-not-allowed"
+                                disabled>Disabled</Button
+                            >
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4
+                            class="text-sm font-semibold text-gray-500 uppercase tracking-wider"
+                        >
+                            Secondary
+                        </h4>
+                        <div class="flex items-center gap-4">
+                            <Button variant="secondary">Secondary Action</Button
+                            >
+                            <Button
+                                variant="secondary"
+                                class="opacity-50 cursor-not-allowed"
+                                disabled>Disabled</Button
+                            >
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4
+                            class="text-sm font-semibold text-gray-500 uppercase tracking-wider"
+                        >
+                            Outline
+                        </h4>
+                        <div class="flex items-center gap-4">
+                            <Button variant="outline">Outline Action</Button>
+                            <Button
+                                variant="outline"
+                                class="opacity-50 cursor-not-allowed"
+                                disabled>Disabled</Button
+                            >
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 w-full mt-4">
+                        <h4
+                            class="text-sm font-semibold text-gray-500 uppercase tracking-wider"
+                        >
+                            With Icons
+                        </h4>
+                        <div class="flex items-center gap-4">
+                            <Button variant="primary">
+                                Send Message
+                                <Icon
+                                    name="arrow-right"
+                                    size="sm"
+                                    class="ml-2"
+                                />
+                            </Button>
+                            <Button variant="outline">
+                                <Icon name="phone" size="sm" class="mr-2" />
+                                Call Us Now
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. BADGES */}
+            <section>
+                <div class="mb-8 border-t border-gray-200 pt-10">
+                    <h2
+                        class="text-3xl font-display font-semibold text-primary mb-2"
+                    >
+                        4. Badges
+                    </h2>
+                    <p class="text-gray-600">
+                        Indicator tags using the Badge.astro component.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-wrap gap-4 p-8 bg-white rounded-lg border border-gray-200 shadow-sm"
+                >
+                    <Badge variant="primary">Primary Tag</Badge>
+                    <Badge variant="secondary">Secondary Tag</Badge>
+                    <Badge variant="outline">Outline Tag</Badge>
+                    <Badge variant="success">Success Status</Badge>
+                    <Badge variant="error">Error Status</Badge>
+                </div>
+            </section>
+
+            {/* 5. CARDS */}
+            <section>
+                <div class="mb-8 border-t border-gray-200 pt-10">
+                    <h2
+                        class="text-3xl font-display font-semibold text-primary mb-2"
+                    >
+                        5. Cards
+                    </h2>
+                    <p class="text-gray-600">
+                        Containers for grouped information using Card.astro.
+                    </p>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-gray-50 rounded-lg border border-gray-200 shadow-inner"
+                >
+                    {/* Base Card */}
+                    <Card
+                        title="Standard Layout Card"
+                        description="This is the base card without any hover effects. Good for static sections."
+                    >
+                        <div
+                            slot="header"
+                            class="flex items-center justify-between"
+                        >
+                            <span
+                                class="text-xs font-semibold text-gray-500 uppercase tracking-wider"
+                                >Information</span
+                            >
+                            <Icon name="info" size="sm" class="text-gray-400" />
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-sm text-gray-500">
+                                Additional content inserted inside the default
+                                slot.
+                            </p>
+                        </div>
+                        <div slot="footer" class="flex justify-end">
+                            <Button variant="outline" class="px-4 py-2 text-sm"
+                                >Action</Button
+                            >
+                        </div>
+                    </Card>
+
+                    {/* Hover Card */}
+                    <Card
+                        title="Interactive Hover Card"
+                        description="This card uses the hoverEffect prop (`hoverEffect={true}`) to raise slightly and increase shadow on hover. Perfect for links to practice areas or blog posts."
+                        hoverEffect={true}
+                    >
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <Badge variant="primary">Interactive</Badge>
+                            <Badge variant="secondary">Hover State</Badge>
+                        </div>
+                    </Card>
+                </div>
+            </section>
+
+            {/* 6. FORM ELEMENTS */}
+            <section>
+                <div class="mb-8 border-t border-gray-200 pt-10">
+                    <h2
+                        class="text-3xl font-display font-semibold text-primary mb-2"
+                    >
+                        6. Form Elements
+                    </h2>
+                    <p class="text-gray-600">
+                        Tailwind customized input styles.
+                    </p>
+                </div>
+
+                <div
+                    class="max-w-xl space-y-6 p-8 bg-white rounded-lg border border-gray-200 shadow-sm"
+                >
+                    <div class="flex flex-col">
+                        <label
+                            for="sample-input"
+                            class="text-sm font-semibold text-gray-700 mb-1"
+                            >Standard Input</label
+                        >
+                        <input
+                            type="text"
+                            id="sample-input"
+                            placeholder="E.g. John Doe"
+                            class="w-full rounded border border-gray-300 px-4 py-2 text-gray-900 focus:border-secondary focus:ring-secondary transition-colors"
+                        />
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label
+                            for="sample-error"
+                            class="text-sm font-semibold text-gray-700 mb-1"
+                            >Error State Input</label
+                        >
+                        <input
+                            type="email"
+                            id="sample-error"
+                            value="invalid-email"
+                            aria-invalid="true"
+                            class="w-full rounded border-red-500 px-4 py-2 text-gray-900 focus:ring-red-500 ring-1 ring-red-500 transition-colors"
+                        />
+                        <span class="text-red-500 text-sm mt-1 font-medium"
+                            >Please enter a valid email address.</span
+                        >
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label
+                            for="sample-textarea"
+                            class="text-sm font-semibold text-gray-700 mb-1"
+                            >Textarea</label
+                        >
+                        <textarea
+                            id="sample-textarea"
+                            rows="3"
+                            placeholder="How can we help you?"
+                            class="w-full rounded border border-gray-300 px-4 py-2 text-gray-900 focus:border-secondary focus:ring-secondary transition-colors resize-y"
+                        ></textarea>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label
+                            for="sample-select"
+                            class="text-sm font-semibold text-gray-700 mb-1"
+                            >Select Dropdown</label
+                        >
+                        <select
+                            id="sample-select"
+                            class="w-full rounded border border-gray-300 px-4 py-2 text-gray-900 focus:border-secondary focus:ring-secondary transition-colors"
+                        >
+                            <option>Corporate Law</option>
+                            <option>Dispute Resolution</option>
+                            <option>Family Law</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center gap-6">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input
+                                type="checkbox"
+                                class="rounded border-gray-300 text-primary focus:ring-primary w-4 h-4 cursor-pointer"
+                                checked
+                            />
+                            <span class="text-sm text-gray-700">Checkbox</span>
+                        </label>
+
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input
+                                type="radio"
+                                name="demo-radio"
+                                class="border-gray-300 text-primary focus:ring-primary w-4 h-4 cursor-pointer"
+                                checked
+                            />
+                            <span class="text-sm text-gray-700">Radio 1</span>
+                        </label>
+
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input
+                                type="radio"
+                                name="demo-radio"
+                                class="border-gray-300 text-primary focus:ring-primary w-4 h-4 cursor-pointer"
+                            />
+                            <span class="text-sm text-gray-700">Radio 2</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            {/* 7. ICONS */}
+            <section>
+                <div class="mb-8 border-t border-gray-200 pt-10">
+                    <h2
+                        class="text-3xl font-display font-semibold text-primary mb-2"
+                    >
+                        7. Icons
+                    </h2>
+                    <p class="text-gray-600">
+                        Commonly used Lucide icons via Icon.astro.
+                    </p>
+                </div>
+
+                <div
+                    class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 p-8 bg-white rounded-lg border border-gray-200 shadow-sm text-center"
+                >
+                    {
+                        [
+                            "home",
+                            "arrow-right",
+                            "arrow-left",
+                            "chevron-right",
+                            "chevron-down",
+                            "menu",
+                            "x",
+                            "phone",
+                            "mail",
+                            "map-pin",
+                            "search",
+                            "briefcase",
+                            "scale",
+                            "book-open",
+                            "users",
+                            "check",
+                            "alert-circle",
+                            "info",
+                        ].map((iconName) => (
+                            <div class="flex flex-col items-center justify-center gap-2 group">
+                                <div class="p-3 rounded-md bg-gray-50 text-gray-600 group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <Icon name={iconName} size="lg" />
+                                </div>
+                                <span class="text-xs text-gray-500 font-mono">
+                                    {iconName}
+                                </span>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            {/* 8. SPACING */}
+            <section>
+                <div class="mb-8 border-t border-gray-200 pt-10">
+                    <h2
+                        class="text-3xl font-display font-semibold text-primary mb-2"
+                    >
+                        8. Spacing Scale
+                    </h2>
+                    <p class="text-gray-600">
+                        Visual representation of standard and custom extended
+                        spacing utilities for margins and padding.
+                    </p>
+                </div>
+
+                <div
+                    class="space-y-4 p-8 bg-white rounded-lg border border-gray-200 shadow-sm overflow-x-auto"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 text-right">
+                            <span class="text-xs font-mono text-gray-500"
+                                >4 (1rem)</span>
+                        </div>
+                        <div class="h-8 bg-secondary/20 rounded-sm w-4"></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 text-right">
+                            <span class="text-xs font-mono text-gray-500"
+                                >8 (2rem)</span>
+                        </div>
+                        <div class="h-8 bg-secondary/30 rounded-sm w-8"></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 text-right">
+                            <span class="text-xs font-mono text-gray-500"
+                                >12 (3rem)</span>
+                        </div>
+                        <div class="h-8 bg-secondary/40 rounded-sm w-12"></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 text-right">
+                            <span class="text-xs font-mono text-gray-500"
+                                >16 (4rem)</span>
+                        </div>
+                        <div class="h-8 bg-secondary/50 rounded-sm w-16"></div>
+                    </div>
+
+                    <div class="my-4 border-t border-dashed border-gray-200">
+                    </div>
+                    <p class="text-xs text-gray-400 mb-2">
+                        Custom Luxurious Spacing:
+                    </p>
+
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 text-right">
+                            <span
+                                class="text-xs font-mono text-gray-700 font-bold"
+                                >18 (4.5rem)</span>
+                        </div>
+                        <div class="h-8 bg-primary/60 rounded-sm w-[4.5rem]">
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 text-right">
+                            <span
+                                class="text-xs font-mono text-gray-700 font-bold"
+                                >22 (5.5rem)</span>
+                        </div>
+                        <div class="h-8 bg-primary/70 rounded-sm w-[5.5rem]">
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 text-right">
+                            <span
+                                class="text-xs font-mono text-gray-700 font-bold"
+                                >30 (7.5rem)</span>
+                        </div>
+                        <div class="h-8 bg-primary/80 rounded-sm w-[7.5rem]">
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 text-right">
+                            <span
+                                class="text-xs font-mono text-gray-700 font-bold"
+                                >36 (9rem)</span>
+                        </div>
+                        <div class="h-8 bg-primary/90 rounded-sm w-36"></div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 9. ANIMATIONS */}
+            <section>
+                <div class="mb-8 border-t border-gray-200 pt-10">
+                    <h2
+                        class="text-3xl font-display font-semibold text-primary mb-2"
+                    >
+                        9. Animations & Interactions
+                    </h2>
+                    <p class="text-gray-600">
+                        Subtle movement for a polished feel.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-wrap gap-12 p-12 bg-gray-50 rounded-lg border border-gray-200 shadow-inner items-center justify-center"
+                >
+                    <div class="flex flex-col items-center gap-4">
+                        <div
+                            class="w-16 h-16 bg-primary rounded-md shadow-lg animate-pulse flex items-center justify-center text-white"
+                        >
+                            <Icon name="loader" />
+                        </div>
+                        <span class="text-xs font-mono text-gray-500"
+                            >animate-pulse</span
+                        >
+                    </div>
+
+                    <div class="flex flex-col items-center gap-4">
+                        <div
+                            class="w-16 h-16 bg-secondary rounded-md shadow-lg flex items-center justify-center text-white"
+                        >
+                            <Icon name="loader" class="animate-spin" />
+                        </div>
+                        <span class="text-xs font-mono text-gray-500"
+                            >animate-spin</span
+                        >
+                    </div>
+
+                    <div class="flex flex-col items-center gap-4">
+                        <div
+                            class="w-16 h-16 bg-white border-2 border-primary rounded-md shadow-lg flex items-center justify-center text-primary transition-transform duration-300 hover:scale-110 cursor-pointer"
+                        >
+                            <Icon name="pointer" />
+                        </div>
+                        <span class="text-xs font-mono text-gray-500"
+                            >hover:scale-110</span
+                        >
+                    </div>
+
+                    <div class="flex flex-col items-center gap-4">
+                        <div
+                            class="w-16 h-16 bg-white border border-gray-200 rounded-md shadow-sm hover:shadow-xl transition-shadow duration-300 flex items-center justify-center text-gray-400 hover:text-primary cursor-pointer"
+                        >
+                            <Icon name="sun" />
+                        </div>
+                        <span class="text-xs font-mono text-gray-500"
+                            >hover:shadow-xl</span
+                        >
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</BaseLayout>

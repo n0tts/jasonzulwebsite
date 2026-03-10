@@ -1,0 +1,150 @@
+---
+import Badge from "../common/Badge.astro";
+import Icon from "../common/Icon.astro";
+
+interface TeamMember {
+    name: string;
+    role: string;
+    admission?: string;
+    specialisations?: string[];
+    qualifications?: string[];
+    /** Simplified bio shown on support-staff cards */
+    bio?: string;
+    /** "partner" | "legal-assistant" | "support" */
+    tier: "partner" | "legal-assistant" | "support";
+    /** If provided, a "View Profile" link is shown at the bottom of the card */
+    profileHref?: string;
+}
+
+interface Props {
+    members: TeamMember[];
+    /** Grid columns class override — defaults to responsive 1/2/3 col */
+    gridClass?: string;
+}
+
+const { members, gridClass = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" } =
+    Astro.props;
+---
+
+<div class={`grid ${gridClass} gap-6`}>
+    {
+        members.map((member) => (
+            <div
+                class={`bg-white rounded-lg border shadow-sm overflow-hidden flex flex-col ${
+                    member.tier === "partner"
+                        ? "border-primary/20"
+                        : "border-gray-200"
+                }`}
+            >
+                {/* Coloured top bar */}
+                <div
+                    class={`h-1.5 w-full ${
+                        member.tier === "partner"
+                            ? "bg-secondary"
+                            : member.tier === "legal-assistant"
+                              ? "bg-primary/40"
+                              : "bg-gray-200"
+                    }`}
+                />
+
+                <div class="px-6 py-5 flex-grow flex flex-col gap-4">
+                    {/* Name & role */}
+                    <div>
+                        <h3 class="font-display font-semibold text-xl text-primary leading-snug mb-1">
+                            {member.name}
+                        </h3>
+                        <div class="flex items-center gap-2">
+                            <Badge
+                                variant={
+                                    member.tier === "partner"
+                                        ? "secondary"
+                                        : "outline"
+                                }
+                            >
+                                {member.role}
+                            </Badge>
+                        </div>
+                    </div>
+
+                    {/* Admission */}
+                    {member.admission && (
+                        <div class="flex items-start gap-2 text-sm text-gray-500 font-body">
+                            <Icon
+                                name="award"
+                                size="sm"
+                                class="text-secondary shrink-0 mt-0.5"
+                                ariaLabel="Bar admission"
+                            />
+                            <span>{member.admission}</span>
+                        </div>
+                    )}
+
+                    {/* Bio (support staff) */}
+                    {member.bio && (
+                        <p class="text-sm text-gray-600 font-body leading-relaxed">
+                            {member.bio}
+                        </p>
+                    )}
+
+                    {/* Specialisations */}
+                    {member.specialisations && member.specialisations.length > 0 && (
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 font-body mb-2">
+                                Specialisation
+                            </p>
+                            <ul class="space-y-1">
+                                {member.specialisations.map((s) => (
+                                    <li class="flex items-start gap-2 text-sm text-gray-700 font-body">
+                                        <Icon
+                                            name="check"
+                                            size="sm"
+                                            class="text-secondary shrink-0 mt-0.5"
+                                            ariaLabel=""
+                                        />
+                                        {s}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    {/* Qualifications */}
+                    {member.qualifications && member.qualifications.length > 0 && (
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-gray-400 font-body mb-2">
+                                Qualifications
+                            </p>
+                            <ul class="space-y-1">
+                                {member.qualifications.map((q) => (
+                                    <li class="flex items-start gap-2 text-sm text-gray-500 font-body">
+                                        <Icon
+                                            name="graduation-cap"
+                                            size="sm"
+                                            class="shrink-0 mt-0.5 text-gray-400"
+                                            ariaLabel=""
+                                        />
+                                        {q}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    {/* Profile link (partners only) */}
+                    {member.profileHref && (
+                        <div class="pt-4 border-t border-gray-100">
+                            <a
+                                href={member.profileHref}
+                                class="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:gap-3 transition-all duration-200 font-body group"
+                                aria-label={`View full profile of ${member.name}`}
+                            >
+                                View Full Profile
+                                <Icon name="arrow-right" size="sm" class="group-hover:translate-x-1 transition-transform duration-200" />
+                            </a>
+                        </div>
+                    )}
+                </div>
+            </div>
+        ))
+    }
+</div>

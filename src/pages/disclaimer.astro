@@ -1,0 +1,355 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionWrapper from "../components/common/SectionWrapper.astro";
+import Icon from "../components/common/Icon.astro";
+
+const lastUpdated = "10 March 2026";
+---
+
+<BaseLayout
+    title="Disclaimer — Jason Zulfadli Advocates & Solicitors"
+    description="Legal disclaimer for the website of Jason Zulfadli Advocates & Solicitors. Website content does not constitute legal advice and no solicitor-client relationship is created by use of this site."
+    noindex={false}
+>
+    {/* Hero */}
+    <section
+        class="bg-primary py-20 md:py-28 relative overflow-hidden"
+        aria-label="Disclaimer page hero"
+    >
+        <div
+            class="absolute top-0 right-0 w-80 h-80 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"
+            aria-hidden="true"
+        ></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex items-center gap-2 mb-4">
+                <a
+                    href="/"
+                    class="text-white/50 hover:text-white text-sm font-body transition-colors"
+                    >Home</a
+                >
+                <Icon name="chevron-right" size="sm" class="text-white/30" />
+                <span class="text-white/80 text-sm font-body">Disclaimer</span>
+            </div>
+            <span
+                class="text-saffron text-sm font-semibold uppercase tracking-widest font-body block mb-4"
+            >
+                Legal
+            </span>
+            <h1
+                class="text-4xl md:text-5xl font-display font-bold text-white leading-tight max-w-3xl"
+            >
+                Disclaimer
+            </h1>
+            <p class="mt-4 text-base font-body text-white/60">
+                Last updated: {lastUpdated}
+            </p>
+        </div>
+    </section>
+
+    {/* Content */}
+    <SectionWrapper id="disclaimer-content">
+        <div class="max-w-3xl mx-auto">
+
+            {/* Important notice banner */}
+            <div
+                class="mb-10 p-6 bg-saffron/10 rounded-lg border border-saffron/30 flex items-start gap-4"
+            >
+                <Icon
+                    name="triangle-alert"
+                    size="lg"
+                    class="text-saffron shrink-0 mt-0.5"
+                    ariaLabel="Important notice"
+                />
+                <p class="font-body text-gray-800 text-base leading-relaxed">
+                    <strong class="font-semibold"
+                        >Important Notice:</strong
+                    > The information on this website is provided for general informational
+                    purposes only. It does not constitute legal advice and does not
+                    create a solicitor-client relationship. Do not act or refrain from
+                    acting on the basis of anything on this website without first seeking
+                    independent legal advice from a qualified legal practitioner.
+                </p>
+            </div>
+
+            <div class="font-body text-gray-700 text-base leading-relaxed">
+
+                {/* 1 */}
+                <section aria-labelledby="d-1">
+                    <h2
+                        id="d-1"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        1. No Legal Advice
+                    </h2>
+                    <p>
+                        Nothing on this website — including articles, blog posts,
+                        practice area descriptions, FAQs, or any other content —
+                        constitutes legal advice, legal opinion, or a recommendation
+                        to take or refrain from taking any particular course of action.
+                        All content is provided for general informational and educational
+                        purposes only.
+                    </p>
+                    <p class="mt-3">
+                        Legal matters are highly fact-specific. The general information
+                        presented here may not apply to your particular situation.
+                        You should always seek advice from a qualified solicitor who
+                        can advise you in light of the specific facts of your case.
+                    </p>
+                </section>
+
+                {/* 2 */}
+                <section aria-labelledby="d-2">
+                    <h2
+                        id="d-2"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        2. No Solicitor-Client Relationship
+                    </h2>
+                    <p>
+                        Accessing or using this website, viewing its content, or
+                        submitting an enquiry through our contact form does
+                        <strong class="text-gray-900">not</strong> establish a
+                        solicitor-client relationship between you and Jason Zulfadli
+                        Advocates &amp; Solicitors, or any of its partners or legal
+                        assistants.
+                    </p>
+                    <p class="mt-3">
+                        A solicitor-client relationship is only formed when the Firm
+                        has expressly agreed to act for you in writing, and you have
+                        accepted our terms of engagement. Until that point, you should
+                        not treat any information you communicate to us through this
+                        website as privileged or confidential.
+                    </p>
+                </section>
+
+                {/* 3 */}
+                <section aria-labelledby="d-3">
+                    <h2
+                        id="d-3"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        3. Accuracy of Information
+                    </h2>
+                    <p>
+                        While we endeavour to ensure that the information on this
+                        website is accurate, complete, and up to date, we make no
+                        representations or warranties of any kind — express or implied
+                        — as to the accuracy, reliability, or completeness of any
+                        information on this website.
+                    </p>
+                    <p class="mt-3">
+                        Laws, regulations, and legal procedures change frequently. The
+                        content on this website may not reflect the most current legal
+                        developments. Jason Zulfadli Advocates &amp; Solicitors accepts
+                        no liability for any errors or omissions in the content of
+                        this website.
+                    </p>
+                </section>
+
+                {/* 4 */}
+                <section aria-labelledby="d-4">
+                    <h2
+                        id="d-4"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        4. Past Results Do Not Guarantee Future Outcomes
+                    </h2>
+                    <p>
+                        Any references to past cases, results, or client outcomes on
+                        this website are illustrative only. Past results achieved by
+                        the Firm or its lawyers in other matters do not guarantee or
+                        predict a similar outcome in future matters. Every legal case
+                        is unique and is determined on its own facts, merits, and
+                        applicable law.
+                    </p>
+                </section>
+
+                {/* 5 */}
+                <section aria-labelledby="d-5">
+                    <h2
+                        id="d-5"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        5. Limitation of Liability
+                    </h2>
+                    <p>
+                        To the fullest extent permitted by law, Jason Zulfadli
+                        Advocates &amp; Solicitors, its partners, legal assistants,
+                        and staff shall not be liable for any loss or damage — whether
+                        direct, indirect, incidental, consequential, or otherwise
+                        — arising from:
+                    </p>
+                    <ul class="mt-4 space-y-2 list-none">
+                        {
+                            [
+                                "Your use of, or reliance on, any content or information on this website;",
+                                "Any inability to access or use this website;",
+                                "Any errors, omissions, or inaccuracies in the content of this website;",
+                                "Any action taken or not taken in reliance on this website without obtaining proper legal advice.",
+                            ].map((item) => (
+                                <li class="flex items-start gap-3">
+                                    <Icon
+                                        name="check"
+                                        size="sm"
+                                        class="text-secondary shrink-0 mt-1"
+                                    />
+                                    <span>{item}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </section>
+
+                {/* 6 */}
+                <section aria-labelledby="d-6">
+                    <h2
+                        id="d-6"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        6. Third-Party Links
+                    </h2>
+                    <p>
+                        This website may contain links to external websites operated
+                        by third parties. These links are provided for convenience and
+                        informational purposes only. We have no control over the
+                        content, accuracy, or availability of those websites and do
+                        not endorse or accept any responsibility for them or for any
+                        loss or damage that may arise from your use of them.
+                    </p>
+                </section>
+
+                {/* 7 */}
+                <section aria-labelledby="d-7">
+                    <h2
+                        id="d-7"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        7. Intellectual Property
+                    </h2>
+                    <p>
+                        All content on this website — including text, graphics,
+                        logos, images, and layout — is the intellectual property of
+                        Jason Zulfadli Advocates &amp; Solicitors unless otherwise
+                        stated. You may not reproduce, distribute, republish, or
+                        transmit any content from this website without our prior
+                        written consent.
+                    </p>
+                </section>
+
+                {/* 8 */}
+                <section aria-labelledby="d-8">
+                    <h2
+                        id="d-8"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        8. Governing Law and Jurisdiction
+                    </h2>
+                    <p>
+                        This disclaimer and your use of this website are governed by
+                        the laws of <strong class="text-gray-800">Malaysia</strong>.
+                        Any disputes arising in connection with this website shall be
+                        subject to the exclusive jurisdiction of the courts of Sabah
+                        and Sarawak, Malaysia.
+                    </p>
+                </section>
+
+                {/* 9 */}
+                <section aria-labelledby="d-9">
+                    <h2
+                        id="d-9"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        9. Regulatory Information
+                    </h2>
+                    <p>
+                        Jason Zulfadli Advocates &amp; Solicitors is a law firm
+                        carrying on practice in Malaysia. Our partners are Advocates
+                        &amp; Solicitors admitted to the High Court of Sabah &amp;
+                        Sarawak and members of the Sabah Bar. Our practice is regulated
+                        by the
+                        <strong class="text-gray-800"
+                            >Legal Profession Act 1976</strong
+                        > and the rules and rulings of the
+                        <strong class="text-gray-800">Bar Council Malaysia</strong>
+                        and the <strong class="text-gray-800">Sabah Law Association</strong>.
+                    </p>
+                </section>
+
+                {/* 10 */}
+                <section aria-labelledby="d-10">
+                    <h2
+                        id="d-10"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        10. Changes to This Disclaimer
+                    </h2>
+                    <p>
+                        We reserve the right to amend this disclaimer at any time
+                        without prior notice. The date at the top of this page
+                        indicates when it was last updated. Your continued use of this
+                        website after any changes constitutes your acceptance of the
+                        revised disclaimer.
+                    </p>
+                </section>
+
+                {/* Contact */}
+                <section aria-labelledby="d-contact">
+                    <h2
+                        id="d-contact"
+                        class="text-2xl font-display font-semibold text-primary mt-10 mb-4"
+                    >
+                        Questions?
+                    </h2>
+                    <p>
+                        If you have any questions about this disclaimer or wish to
+                        obtain proper legal advice, please contact us directly:
+                    </p>
+                    <div
+                        class="mt-4 bg-gray-50 rounded-lg border border-gray-200 p-5 space-y-1 text-sm"
+                    >
+                        <p class="font-semibold text-primary">
+                            Jason Zulfadli Advocates &amp; Solicitors
+                        </p>
+                        <p>
+                            Lot S6-3, 2nd Floor, Villa Tropicana Commercial,<br />
+                            Jalan Lintas, Penampang Bypass,<br />
+                            88300 Kota Kinabalu, Sabah, Malaysia
+                        </p>
+                        <p>
+                            Tel: <a
+                                href="tel:088742076"
+                                class="text-secondary hover:underline">088-742076</a>
+                        </p>
+                        <p>
+                            Email: <a
+                                href="mailto:jzlegalfirm@gmail.com"
+                                class="text-secondary hover:underline"
+                                >jzlegalfirm@gmail.com</a
+                            >
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+
+            {/* Back links */}
+            <div class="mt-12 pt-8 border-t border-gray-200 flex flex-wrap gap-4">
+                <a
+                    href="/"
+                    class="inline-flex items-center gap-2 text-sm font-semibold font-body text-secondary hover:gap-3 transition-all duration-200"
+                >
+                    <Icon name="arrow-left" size="sm" />
+                    Back to Home
+                </a>
+                <a
+                    href="/privacy-policy"
+                    class="inline-flex items-center gap-2 text-sm font-semibold font-body text-gray-500 hover:text-primary transition-colors"
+                >
+                    Read our Privacy Policy
+                    <Icon name="arrow-right" size="sm" />
+                </a>
+            </div>
+
+        </div>
+    </SectionWrapper>
+</BaseLayout>

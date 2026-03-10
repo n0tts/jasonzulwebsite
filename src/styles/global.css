@@ -1,0 +1,70 @@
+/* Tailwind v4 — replaces @tailwind base/components/utilities */
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────
+   THEME — custom design tokens
+   Generates utility classes automatically:
+     --color-primary  →  bg-primary, text-primary, border-primary …
+     --font-display   →  font-display
+     --text-md        →  text-md  (extends Tailwind's default scale)
+───────────────────────────────────────── */
+@theme {
+  /* Brand Colors */
+  --color-primary: #0e2442;
+  --color-secondary: #0077b6;
+  --color-saffron: #E3B505;
+  --color-accent: #ffffff;
+
+  /* Font Families */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  /* Type Scale — aligned to Tailwind defaults, with text-md added as a custom step */
+  --text-sm: 0.875rem;
+  /* 14px */
+  --text-base: 1rem;
+  /* 16px */
+  --text-md: 1.125rem;
+  /* 18px — custom lead size */
+  --text-lg: 1.25rem;
+  /* 20px */
+  --text-xl: 1.5rem;
+  /* 24px */
+  --text-2xl: 1.875rem;
+  /* 30px */
+  --text-3xl: 2.25rem;
+  /* 36px */
+  --text-4xl: 2.75rem;
+  /* 44px */
+}
+
+/* ─────────────────────────────────────────
+   BASE — global element defaults
+───────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-base text-gray-900 bg-accent;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-primary;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  /* Accessible focus ring — replaces browser default */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-secondary ring-offset-2;
+  }
+}

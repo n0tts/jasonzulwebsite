@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/common/PostCard.astro";
+
+const allPosts = await getCollection("blog", ({ data }) => {
+    return data.draft !== true;
+});
+
+const sortedPosts = allPosts.sort(
+    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
+
+const pageTitle = "Legal Insights & News";
+const pageDescription =
+    "Stay up to date with the latest legal industry insights, firm news, and practical guides for small businesses in Sabah.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                {pageTitle}
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                {pageDescription}
+            </p>
+        </div>
+
+        {
+            sortedPosts.length > 0 ? (
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {sortedPosts.map((post) => (
+                        <PostCard post={post} />
+                    ))}
+                </div>
+            ) : (
+                <div class="text-center py-20 bg-gray-50 rounded-xl border border-gray-100">
+                    <p class="text-lg text-gray-500 font-medium">
+                        We are preparing our first articles. Check back soon!
+                    </p>
+                </div>
+            )
+        }
+    </div>
+</BaseLayout>

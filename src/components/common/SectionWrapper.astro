@@ -1,0 +1,28 @@
+---
+interface Props {
+    id?: string;
+    class?: string;
+    innerClass?: string;
+    /** Use "full" to remove the max-width container (edge-to-edge backgrounds) */
+    variant?: "default" | "full";
+}
+
+const {
+    id,
+    class: className = "",
+    innerClass = "",
+    variant = "default",
+} = Astro.props;
+---
+
+<section id={id} class={`py-16 md:py-24 ${className}`}>
+    {
+        variant === "full" ? (
+            <slot />
+        ) : (
+            <div class={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${innerClass}`}>
+                <slot />
+            </div>
+        )
+    }
+</section>
