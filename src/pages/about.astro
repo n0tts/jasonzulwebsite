@@ -5,20 +5,15 @@ import PhilosophySection from "../components/sections/PhilosophySection.astro";
 import CTABanner from "../components/sections/CTABanner.astro";
 import TeamGrid from "../components/sections/TeamGrid.astro";
 import Icon from "../components/common/Icon.astro";
-
-const firmStats = [
-    { label: "Established", value: "2021" },
-    { label: "Practice Areas", value: "7" },
-    { label: "Admitted Partners", value: "2" },
-    { label: "Team Members", value: "7" },
-];
+import { Image } from "astro:assets";
+import groupPhoto from "../assets/images/Group-Photo.jpg";
 
 const partners = [
     {
         name: "Jason Chin Wei Jye",
         role: "Founding Partner",
         tier: "partner" as const,
-        admission: "Sabah Bar, 14th August 2020 (Admission No. 1392)",
+        admission: "Sabah Bar, 20th November 2020 (Admission No. 1392)",
         specialisations: [
             "Civil and Criminal Litigation",
             "Comprehensive legal solutions and strategic representation",
@@ -33,7 +28,7 @@ const partners = [
         name: "Mohd Zulfadhli Bin Darman Shah",
         role: "Managing Partner",
         tier: "partner" as const,
-        admission: "Sabah Bar, 14th August 2020 (Admission No. 1381)",
+        admission: "Sabah Bar, 20th November 2020 (Admission No. 1381)",
         specialisations: [
             "Corporate matters and advisory",
             "Conveyancing and property transactions",
@@ -54,25 +49,25 @@ const legalAssistants = [
         tier: "legal-assistant" as const,
         admission: "Sabah Bar, 15th November 2023 (Admission No. 1547)",
         specialisations: [
-            "Civil litigation and medical law",
-            "Conveyancing matters",
-            "Medical negligence and healthcare ethics",
+            "General Civil Litigation",
+            "Debt Recovery",
+            "Land Matter (Sabah)",
         ],
         qualifications: [
             "Foundation in Law, UiTM Dengkil",
             "Bachelor of Laws (Honours), UiTM Shah Alam",
+            "Malaysian Bar (Peninsular), 9th May 2025",
         ],
     },
     {
         name: "Magret Azeyra Rap",
         role: "Legal Assistant",
         tier: "legal-assistant" as const,
-        admission:
-            "High Court of Sabah & Sarawak, May 2024 (Admission No. 1582)",
+        admission: "Sabah Bar, 09th May 2024 (Admission No. 1582)",
         specialisations: [
             "Civil and criminal litigation",
-            "Non-contentious matters",
-            "Courtroom advocacy and case management",
+            "Banking Litigation & Debt Recovery",
+            "Family Law (Divorce & Adoption)",
         ],
         qualifications: ["Bachelor of Law (Hons), UiTM"],
     },
@@ -155,143 +150,59 @@ const supportStaff = [
 
     {/* 2. Firm Story */}
     <SectionWrapper id="firm-story">
-        <div
-            class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"
-        >
-            {/* Left — narrative */}
-            <div>
-                <span
-                    class="text-secondary text-sm font-semibold uppercase tracking-widest font-body block mb-3"
-                >
-                    Our Story
-                </span>
-                <h2
-                    class="text-3xl md:text-4xl font-display font-semibold text-primary mb-6 leading-snug"
-                >
-                    Built on Passion, Driven by Purpose
-                </h2>
-                <div
-                    class="space-y-5 font-body text-gray-700 text-base leading-relaxed"
-                >
-                    <p>
-                        <strong class="text-primary font-semibold"
-                            >Jason Zulfadhli Advocates &amp; Solicitors</strong
-                        >
-                        was founded in <strong>2021</strong> by Mr. Jason Chin Wei
-                        Jye, an Advocate &amp; Solicitor admitted to the Sabah Bar
-                        on 14th August 2020. The firm began as <em
-                            >JF &amp; Co.</em
-                        > before being renamed following the arrival of Managing Partner
-                        Mr. Mohd Zulfadhli Bin Darman Shah — a milestone that marked
-                        the firm's evolution into a more comprehensive practice.
-                    </p>
-                    <p>
-                        Located at <strong
-                            >Villa Tropicana Commercial, Penampang</strong
-                        >, the firm serves clients across Kota Kinabalu and the
-                        wider state of Sabah. Our focus has always been clear:
-                        to provide quality, professional legal service that is
-                        responsive, honest, and effective.
-                    </p>
-                    <p>
-                        We believe in bringing fresh perspectives and genuine
-                        passion to every legal matter — whether it is a complex
-                        civil dispute, a corporate transaction, or a family
-                        property transfer. No case is too small; every client
-                        deserves our full attention.
-                    </p>
-                </div>
-            </div>
-
-            {/* Right — stats grid */}
-            <div>
-                <div class="grid grid-cols-2 gap-4 mb-8">
-                    {
-                        firmStats.map((stat) => (
-                            <div class="bg-gray-50 rounded-lg border border-gray-200 p-6 text-center">
-                                <p class="text-3xl font-display font-bold text-primary mb-1">
-                                    {stat.value}
-                                </p>
-                                <p class="text-sm text-gray-500 font-body">
-                                    {stat.label}
-                                </p>
-                            </div>
-                        ))
-                    }
-                </div>
-
-                {/* Address card */}
-                <div
-                    class="bg-primary/5 rounded-lg border border-primary/10 p-6"
-                >
-                    <p
-                        class="text-xs font-semibold uppercase tracking-wider text-gray-400 font-body mb-3"
+        <div class="mb-10">
+            <span
+                class="text-secondary text-sm font-semibold uppercase tracking-widest font-body block mb-3"
+            >
+                Our Story
+            </span>
+            <h2
+                class="text-3xl md:text-4xl font-display font-semibold text-primary mb-6 leading-snug"
+            >
+                Built on Passion, Driven by Purpose
+            </h2>
+            <div
+                class="columns-1 md:columns-2 gap-8 font-body text-gray-700 text-base leading-relaxed [&>p]:mb-5 [&>p:last-child]:mb-0"
+            >
+                <p>
+                    <strong class="text-primary font-semibold"
+                        >Jason Zulfadhli Advocates &amp; Solicitors</strong
                     >
-                        Office Address
-                    </p>
-                    <div class="flex items-start gap-3">
-                        <Icon
-                            name="map-pin"
-                            size="md"
-                            class="text-secondary shrink-0 mt-0.5"
-                            ariaLabel="Office location"
-                        />
-                        <address
-                            class="not-italic text-gray-700 font-body text-sm leading-relaxed"
-                        >
-                            Lot S6-3, 2nd Floor, Villa Tropicana Commercial,<br
-                            />
-                            Jalan Lintas, Penampang Bypass,<br />
-                            88300 Kota Kinabalu, Sabah
-                        </address>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-primary/10 space-y-2">
-                        <div
-                            class="flex items-center gap-3 text-sm text-gray-600 font-body"
-                        >
-                            <Icon
-                                name="clock"
-                                size="sm"
-                                class="text-secondary shrink-0"
-                                ariaLabel="Operating hours"
-                            />
-                            <span
-                                >Mon–Fri · 9:00 am – 1:00 pm, 2:00 pm – 5:00 pm</span
-                            >
-                        </div>
-                        <div
-                            class="flex items-center gap-3 text-sm text-gray-600 font-body"
-                        >
-                            <Icon
-                                name="phone"
-                                size="sm"
-                                class="text-secondary shrink-0"
-                                ariaLabel="Phone"
-                            />
-                            <a
-                                href="tel:088742076"
-                                class="hover:text-secondary transition-colors"
-                                >088-742076</a
-                            >
-                        </div>
-                        <div
-                            class="flex items-center gap-3 text-sm text-gray-600 font-body"
-                        >
-                            <Icon
-                                name="mail"
-                                size="sm"
-                                class="text-secondary shrink-0"
-                                ariaLabel="Email"
-                            />
-                            <a
-                                href="mailto:jzlegalfirm@gmail.com"
-                                class="hover:text-secondary transition-colors"
-                                >jzlegalfirm@gmail.com</a
-                            >
-                        </div>
-                    </div>
-                </div>
+                    was founded in <strong>2021</strong> by Mr. Jason Chin Wei
+                    Jye, an Advocate &amp; Solicitor admitted to the Sabah Bar
+                    on 14th August 2020. The firm began as <em
+                        >JF &amp; Co.</em
+                    > before being renamed following the arrival of Managing Partner
+                    Mr. Mohd Zulfadhli Bin Darman Shah — a milestone that marked
+                    the firm's evolution into a more comprehensive practice.
+                </p>
+                <p>
+                    Located at <strong
+                        >Villa Tropicana Commercial, Penampang</strong
+                    >, the firm serves clients across Kota Kinabalu and the
+                    wider state of Sabah. Our focus has always been clear:
+                    to provide quality, professional legal service that is
+                    responsive, honest, and effective.
+                </p>
+                <p>
+                    We believe in bringing fresh perspectives and genuine
+                    passion to every legal matter — whether it is a complex
+                    civil dispute, a corporate transaction, or a family
+                    property transfer. No case is too small; every client
+                    deserves our full attention.
+                </p>
             </div>
+        </div>
+
+        {/* Full-width group photo */}
+        <div class="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+            <Image
+                src={groupPhoto}
+                alt="Jason Zulfadhli Advocates & Solicitors team"
+                width={1280}
+                height={640}
+                class="w-full object-cover object-center"
+            />
         </div>
     </SectionWrapper>
 

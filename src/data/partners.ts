@@ -1,3 +1,7 @@
+import type { ImageMetadata } from "astro";
+import jasonPhoto from "../assets/images/Jason.jpg";
+import zulPhoto from "../assets/images/Zul.jpg";
+
 export interface Partner {
     slug: string;
     name: string;
@@ -5,6 +9,7 @@ export interface Partner {
     admissionBar: string;
     admissionDate: string;
     admissionNo: string;
+    photo: ImageMetadata;
     /** Multiple paragraphs of bio copy */
     bio: string[];
     specialisationHeading: string;
@@ -18,10 +23,11 @@ export const partners: Partner[] = [
         name: "Jason Chin Wei Jye",
         role: "Founding Partner",
         admissionBar: "Sabah Bar",
-        admissionDate: "14th August 2020",
+        admissionDate: "20th November 2020",
         admissionNo: "1392",
+        photo: jasonPhoto,
         bio: [
-            "Mr. Jason Chin Wei Jye is the distinguished founding partner of JASON ZULFADHLI, bringing a wealth of legal expertise to the firm. He was admitted to the Sabah Bar on 14th August 2020 and has since dedicated himself to the practice of law, amassing three years of experience as an Advocates & Solicitors in Sabah.",
+            "Mr. Jason Chin Wei Jye is the distinguished founding partner of JASON ZULFADHLI, bringing a wealth of legal expertise to the firm. He was admitted to the Sabah Bar on 20th November 2020 and has since dedicated himself to the practice of law, amassing three years of experience as an Advocates & Solicitors in Sabah.",
             "Mr. Jason Chin Wei Jye's dedication to his profession and his commitment to delivering high-quality legal services make him a vital asset to Jason Zulfadhli Law Firm. His years of experience, coupled with his strong educational background, make him a trusted advisor and advocate for clients seeking legal representation.",
         ],
         specialisationHeading: "Civil and Criminal Litigation",
@@ -38,10 +44,11 @@ export const partners: Partner[] = [
         name: "Mohd Zulfadhli Bin Darman Shah",
         role: "Managing Partner",
         admissionBar: "Sabah Bar",
-        admissionDate: "14th August 2020",
+        admissionDate: "20th November 2020",
         admissionNo: "1381",
+        photo: zulPhoto,
         bio: [
-            "Mr. Mohd Zulfadhli Bin Darman Shah is the esteemed managing partner of JASON ZULFADHLI. With a wealth of legal expertise, he has made significant contributions to the legal field. He was admitted to the Sabah Bar on 14th August 2020, marking the beginning of a promising career in law.",
+            "Mr. Mohd Zulfadhli Bin Darman Shah is the esteemed managing partner of JASON ZULFADHLI. With a wealth of legal expertise, he has made significant contributions to the legal field. He was admitted to the Sabah Bar on 20th November 2020, marking the beginning of a promising career in law.",
             "His dedication to the field, combined with his academic and professional achievements, make him a trusted advisor and advocate for clients seeking legal expertise.",
         ],
         specialisationHeading: "Corporate Law & Conveyancing",
