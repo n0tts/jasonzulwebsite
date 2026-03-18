@@ -7,6 +7,11 @@ import TeamGrid from "../components/sections/TeamGrid.astro";
 import Icon from "../components/common/Icon.astro";
 import { Image } from "astro:assets";
 import groupPhoto from "../assets/images/Group-Photo.jpg";
+import beverlyPhoto from "../assets/images/Beverly.jpg";
+import magretPhoto from "../assets/images/Magret.jpg";
+import alishaPhoto from "../assets/images/Alisha.jpg";
+import josiePhoto from "../assets/images/Josie.jpg";
+import shahiratulPhoto from "../assets/images/Shahiratul.jpg";
 
 const partners = [
     {
@@ -37,6 +42,7 @@ const partners = [
         qualifications: [
             "Foundation in Law, Multimedia University, Melaka",
             "Bachelor of Laws (Hons), Multimedia University, Melaka",
+            "Diploma in Shariah Law",
         ],
         profileHref: "/partners/mohd-zulfadhli-bin-darman-shah",
     },
@@ -53,6 +59,7 @@ const legalAssistants = [
             "Debt Recovery",
             "Land Matter (Sabah)",
         ],
+        photo: beverlyPhoto,
         qualifications: [
             "Foundation in Law, UiTM Dengkil",
             "Bachelor of Laws (Honours), UiTM Shah Alam",
@@ -64,6 +71,7 @@ const legalAssistants = [
         role: "Legal Assistant",
         tier: "legal-assistant" as const,
         admission: "Sabah Bar, 09th May 2024 (Admission No. 1582)",
+        photo: magretPhoto,
         specialisations: [
             "Civil and criminal litigation",
             "Banking Litigation & Debt Recovery",
@@ -78,6 +86,7 @@ const supportStaff = [
         name: "Alisha Siankie Pain",
         role: "Admin Clerk",
         tier: "support" as const,
+        photo: alishaPhoto,
         bio: "Manages schedules, coordinates appointments, files legal documents, drafts correspondence, handles client inquiries, and assists the conveyancing department with SPA and MOT preparation.",
         qualifications: [
             "Diploma in Public Administration, UiTM Kota Kinabalu",
@@ -88,6 +97,7 @@ const supportStaff = [
         name: "Josie Brynda Telado",
         role: "Conveyancing Clerk",
         tier: "support" as const,
+        photo: josiePhoto,
         bio: "Drafts letters and client communications, prepares Sale and Purchase Agreements (SPA) and Memorandum of Transfer (MOT), arranges execution appointments, and monitors title transfer progress.",
         qualifications: ["Diploma in Accountancy, Polytechnic Kota Kinabalu"],
     },
@@ -95,6 +105,7 @@ const supportStaff = [
         name: "Syahiratul Nur Amalina binti Samlin",
         role: "Conveyancing Clerk",
         tier: "support" as const,
+        photo: shahiratulPhoto,
         bio: "Manages conveyancing matters professionally — experienced in sale and purchase agreements, loan documentation, and Syariah and civil proceedings.",
         qualifications: [
             "Diploma in Islamic Studies (Syariah and Law), UniPSAS",

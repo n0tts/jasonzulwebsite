@@ -59,6 +59,7 @@ export const partners: Partner[] = [
         qualifications: [
             "Foundation in Law, Multimedia University, Melaka",
             "Bachelor of Laws (Hons), Multimedia University, Melaka",
+            "Diploma in Shariah Law",
         ],
     },
 ];
