@@ -49,17 +49,18 @@ export const partners: Partner[] = [
         photo: zulPhoto,
         bio: [
             "Mr. Mohd Zulfadhli Bin Darman Shah is the esteemed managing partner of JASON ZULFADHLI. With a wealth of legal expertise, he has made significant contributions to the legal field. He was admitted to the Sabah Bar on 20th November 2020, marking the beginning of a promising career in law.",
-            "His dedication to the field, combined with his academic and professional achievements, make him a trusted advisor and advocate for clients seeking legal expertise.",
+            "Mr. Mohd Zulfadhli focuses his expertise on corporate matter and conveyancing. His in-depth knowledge and experience in these areas make him an invaluable asset to the firm, providing clients with comprehensive legal solutions and strategic guidance.",
+            "He had also had the opportunity to appear before the Federal Court and Court of Appeal. His dedication to the field, combined with his academic and professional achievements, make him a trusted advisor and advocate for clients seeking legal expertise.",
         ],
-        specialisationHeading: "Corporate Law & Conveyancing",
+        specialisationHeading: "Corporate matter and conveyancing",
         specialisationBody: [
-            "Mr. Mohd Zulfadhli focuses his expertise on corporate matters and conveyancing. His in-depth knowledge and experience in these areas make him an invaluable asset to the firm, providing clients with comprehensive legal solutions and strategic guidance.",
-            "He has also had the opportunity to appear before the Federal Court and Court of Appeal.",
+            "Mr. Mohd Zulfadhli focuses his expertise on corporate matter and conveyancing. His in-depth knowledge and experience in these areas make him an invaluable asset to the firm, providing clients with comprehensive legal solutions and strategic guidance.",
+            "He had also had the opportunity to appear before the Federal Court and Court of Appeal.",
         ],
         qualifications: [
             "Foundation in Law, Multimedia University, Melaka",
             "Bachelor of Laws (Hons), Multimedia University, Melaka",
-            "Diploma in Shariah Law",
+            "Diploma in Islamic Judicial and Advocatory Practice, USIM",
         ],
     },
 ];
