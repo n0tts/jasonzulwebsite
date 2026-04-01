@@ -18,6 +18,8 @@ interface Props {
     secondaryLabel?: string;
     /** Secondary CTA href */
     secondaryHref?: string;
+    /** Optional id for the secondary CTA element */
+    secondaryId?: string;
     /** Optional background image */
     bgImage?: ImageMetadata;
 }
@@ -30,6 +32,7 @@ const {
     primaryHref = "/practice-areas",
     secondaryLabel = "Contact Us",
     secondaryHref = "/contact",
+    secondaryId,
     bgImage,
 } = Astro.props;
 ---
@@ -128,6 +131,7 @@ const {
                     secondaryHref && secondaryLabel && (
                         <a
                             href={secondaryHref}
+                            id={secondaryId}
                             class="inline-flex items-center justify-center px-8 py-3.5 font-semibold rounded-md transition-colors bg-white/10 backdrop-blur-sm border-2 border-white/60 text-white hover:bg-white/20 hover:border-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-primary"
                         >
                             <Icon name="phone" size="sm" class="mr-2" />

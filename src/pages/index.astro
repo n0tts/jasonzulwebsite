@@ -30,7 +30,8 @@ const stats = [
         primaryLabel="Our Practice Areas"
         primaryHref="/practice-areas"
         secondaryLabel="Get in Touch"
-        secondaryHref="/contact"
+        secondaryHref="#"
+        secondaryId="open-chatbot"
         bgImage={heroBanner}
     />
 
@@ -136,3 +137,10 @@ const stats = [
         phone="088-742076"
     />
 </BaseLayout>
+
+<script>
+  document.getElementById("open-chatbot")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    (window as any).botpress?.open();
+  });
+</script>
